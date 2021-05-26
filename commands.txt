@@ -1,0 +1,11 @@
+pip install django
+pip install Pillow
+pip install Stripe
+pip install whitenoise
+
+
+py manage.py runserver
+#Activate Virtual Environment
+#E/Email_auth/venv/Scripts/activate.bat
+
+#cd test/Scripts/activate.bat
