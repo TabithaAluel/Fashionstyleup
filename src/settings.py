@@ -26,7 +26,7 @@ SECRET_KEY = '2_+0cn0tm8)h+fwrk#prvw@#vvqb!no)@%d=fto8i-4_&h+^5g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #192.168.43.2
-ALLOWED_HOSTS = ['smartsretail.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','smartsretail.herokuapp.com']
 
 
 # Application definition
