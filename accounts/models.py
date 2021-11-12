@@ -6,7 +6,7 @@ from shop.models import Product,Category
 class Profile(models.Model):
     user = models.OneToOneField(User , on_delete=models.CASCADE)
     auth_token = models.CharField(max_length=100 )
-    phone=models.IntegerField(default=+254768651609)
+    phone=models.IntegerField(null=True)
     is_verified = models.BooleanField(default=False)
     forget_password_token = models.CharField(max_length=100,default='0')
     created_at = models.DateTimeField(auto_now_add=True)
