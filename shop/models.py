@@ -5,8 +5,12 @@ from django.db.models import Avg, Count
 from django.forms import ModelForm
 
 class Category(models.Model):
-	name = models.CharField(max_length=250,unique=True)
-	slug = models.SlugField(max_length=250,unique=True)
+	name = models.CharField(max_length=250,unique=True,null=True)
+	slug = models.SlugField(max_length=250,unique=True,null=True)
+	image = models.ImageField(upload_to='product', blank=True)
+	price = models.DecimalField(max_digits=10, decimal_places=2,null=True)
+
+
 	description = models.TextField(blank=True)
 	image = models.ImageField(upload_to='category',blank=True) 
 	class Meta:
@@ -22,27 +26,29 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+	pair_with = models.ManyToManyField("self",blank=True)
+
 	
-	name = models.CharField(max_length=250, unique=True)
-	slug = models.SlugField(max_length=250, unique=True) 
-	description = models.TextField(blank=True)
+	name = models.CharField(max_length=250, unique=True,null=True)
+	slug = models.SlugField(max_length=250, unique=True,null=True) 
+	description = models.TextField(blank=True,null=True)
 	#product_id = models.AutoField(primary_key=True)
-	category = models.ForeignKey(Category, on_delete=models.CASCADE) 
+	category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
 	price = models.DecimalField(max_digits=10, decimal_places=2)
-	cut_through_price=models.DecimalField(max_digits=10, decimal_places=2,default="999")
 	discount=models.IntegerField(default="1")
 	
 	image = models.ImageField(upload_to='product', blank=True)
-	image1 = models.ImageField(upload_to='product', blank=True)
-	image2 = models.ImageField(upload_to='product', blank=True)
-	image3 = models.ImageField(upload_to='product', blank=True)
-	image4 = models.ImageField(upload_to='product', blank=True)
-	stock = models.IntegerField()
-	available = models.BooleanField(default=True) 
-	created = models.DateTimeField(auto_now=True)
-	updated = models.DateTimeField(auto_now=True)
+	# image1 = models.ImageField(upload_to='product', blank=True)
+	# image2 = models.ImageField(upload_to='product', blank=True)
+	# image3 = models.ImageField(upload_to='product', blank=True)
+	# image4 = models.ImageField(upload_to='product', blank=True)
+	stock = models.IntegerField(null=True)
+	available = models.BooleanField(default=True,null=True) 
+	created = models.DateTimeField(auto_now=True,null=True)
+	updated = models.DateTimeField(auto_now=True,null=True)
 
-	favourite = models.ManyToManyField(User ,related_name='favourite',blank=True)
+
+	favourite = models.ManyToManyField(User ,related_name='favourite',blank=True,null=True)
 	
 
 

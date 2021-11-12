@@ -35,13 +35,26 @@ def ProdCatDetail(request, c_slug, product_slug):
     
     try:
         product = Product.objects.get(category__slug=c_slug, slug=product_slug)
+        pair_with = product.pair_with.all()
+
+        print(c_slug,product_slug)
         ctg= Category.objects.get(name=product.category)
         related_products = Product.objects.filter(category=ctg)
+
         
         context = {
+            'ctg':ctg,
             'product':product,
-            'related_products':related_products
+            'related_products':related_products,
+            "pair_with":pair_with,
         }
+        print(product.pair_with, "is the product")
+
+
+
+
+
+
 
     except Exception as e:
         raise e
@@ -55,7 +68,7 @@ def wish_prod(request,product_slug):
         wish= Product.objects.filter(name=username)
     
         context = {
-            'product':product,
+            'product':product1,
             'wish':wish
         }
     except Exception as e:

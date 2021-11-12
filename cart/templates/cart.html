@@ -36,7 +36,7 @@
 							<td><a href="{{ cart_item.product.get_url }}"><img src="{{ cart_item.product.image.url }}" height="100px" width="100px" alt="..." ></a></td>
 							<td style="text-align: center; padding-top: 45px;">{{ cart_item.product.name }}</td>
 							<td><button type="button" class="btn btn-outline-dark">{{ cart_item.product.id }}</button></td>
-							<td><button type="button" class="btn btn-outline-dark">₹ {{ cart_item.product.price }}</button></td>
+							<td><button type="button" class="btn btn-outline-dark">Ksh {{ cart_item.product.price }}</button></td>
 							<td>
 								{% if cart_item.quantity < cart_item.product.stock %}
 								<div class="btn-group" role="group" aria-label="Basic mixed styles example">
@@ -52,39 +52,39 @@
 									</div>
 								{% endif %}
 							</td>
-							<td><button type="button" class="btn btn-outline-dark">₹ {{ cart_item.sub_total }}</button></td> 
+							<td><button type="button" class="btn btn-outline-dark">Ksh {{ cart_item.sub_total }}</button></td> 
 							<td><a href="{% url 'cart:full_remove' cart_item.product.id %}"><button type="button" class="btn btn-outline-dark">X</button></a></td>
 						</tr>
 					{% endfor %}
 					{% if total < 2000 %}
-					<tr>
+					<!-- <tr>
 
 						<td colspan="5" style="text-align: right; height: 75px; padding-top: 23px;">
 							<b>Delivery Charges</b>
 						</td>
 						<td colspan="1" style="text-align: center; padding-top: 23px;">₹ 50.00</td>
 						<td>Free Above 2000</td>
-					</tr>
+					</tr> -->
 					<tr>
 						<td colspan="5" style="text-align: right; height: 75px; padding-top: 23px;">
 							<b>Total Payment</b>
 						</td>
-						<td colspan="1" style="text-align: center; padding-top: 23px;">₹ {{ total }}</td>
+						<td colspan="1" style="text-align: center; padding-top: 23px;">Ksh {{ total }}</td>
 						
 					</tr>
 					{% else %}
-					<tr>
+					<!-- <tr>
 
 						<td colspan="5" style="text-align: right; height: 75px; padding-top: 23px;">
 							<b>Delivery Charges</b>
 						</td>
 						<td colspan="1" style="text-align: center; padding-top: 23px;">₹ 0.00</td>
-					</tr>
+					</tr> -->
 					<tr>
 						<td colspan="5" style="text-align: right; height: 75px; padding-top: 23px;">
 							<b>Total Payment</b>
 						</td>
-						<td colspan="1" style="text-align: center; padding-top: 23px;">₹ {{ total }}</td>
+						<td colspan="1" style="text-align: center; padding-top: 23px;">Ksh{{ total }}</td>
 					</tr>
 					{% endif %}
 

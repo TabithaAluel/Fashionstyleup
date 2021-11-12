@@ -34,6 +34,6 @@ if settings.DEBUG: #mapping static and media url when debug is enabled
 	urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
     
-admin.site.site_header = "Smart Retail Solutions"
-admin.site.site_title = "Smart Retail Admin Portal"
-admin.site.index_title = "Welcome to Smart Retail Solutions"
+admin.site.site_header = "Glow & Glamour"
+# admin.site.site_title = "Smart Retail Admin Portal"
+# admin.site.index_title = "Welcome to Smart Retail Solutions"

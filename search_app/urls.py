@@ -6,3 +6,18 @@ app_name = 'search_app'
 urlpatterns = [
 		re_path(r'^.*/', views.searchResult, name='searchResult'), 
     ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

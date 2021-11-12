@@ -160,7 +160,14 @@
    
     <div class="continer">
         <form method="post" class="form" id="form">
-            <img src="{% static 'a2.jpeg' %}"  class="d-block w-100">
+            <h4>Glow & Glamour</h4>
+            <style>
+                h4{
+                    color: plum;
+                    text-align: center;
+                    font-size: 28px;
+                }
+            </style>
             <h1>Login</h1>
             {% csrf_token %}
             {% if messages %}
