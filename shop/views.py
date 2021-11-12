@@ -40,6 +40,7 @@ def ProdCatDetail(request, c_slug, product_slug):
         print(c_slug,product_slug)
         ctg= Category.objects.get(name=product.category)
         related_products = Product.objects.filter(category=ctg)
+        print("debugging")
 
         
         context = {
