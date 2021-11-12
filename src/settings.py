@@ -1,3 +1,5 @@
+import django_heroku
+
 """
 Django settings for src project.
 
@@ -153,3 +155,4 @@ EMAIL_HOST_PASSWORD = "ADD YOUR PASSWORD HERE"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
