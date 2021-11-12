@@ -27,7 +27,7 @@ class Contact(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=70, default="")
     phone = models.CharField(max_length=70, default="")
-    desc = models.CharField(max_length=1000, default="")
+    desc = models.CharField(max_length=100, default="")
 
 
     def __str__(self):
