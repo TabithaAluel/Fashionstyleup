@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block title %}
-	Wishlist Smart Solutions Private Limited
+
 {% endblock %}
 
 {% block content %}
@@ -33,7 +33,7 @@
                     </div>
                     <div class="card-body">
                         <a href="{{ wish_item.product.get_url }}"><img src="{{ wish_item.product.image.url }}" alt="" class="float-left rounded custom_image" ></a>
-                      <h1 class="card-title pricing-card-title">₹{{ wish_item.product.price }}</h1>
+                      <h1 class="card-title pricing-card-title">KSH{{ wish_item.product.price }}</h1>
                       {% if wish_item.quantity < wish_item.product.stock %}
                       <a href="{% url 'cart:add_cart' wish_item.product.id %}"><button type="button" class="w-100 btn btn-lg btn-outline-success" >Add to Cart</button></a>
                       {% else %}
