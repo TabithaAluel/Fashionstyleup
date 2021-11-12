@@ -5,8 +5,8 @@ from django.db.models import Avg, Count
 from django.forms import ModelForm
 
 class Category(models.Model):
-	name = models.CharField(max_length=250,unique=True,null=True)
-	slug = models.SlugField(max_length=250,unique=True,null=True)
+	name = models.CharField(max_length=50,unique=True,null=True)
+	slug = models.SlugField(max_length=50,unique=True,null=True)
 	image = models.ImageField(upload_to='product', blank=True)
 	price = models.DecimalField(max_digits=10, decimal_places=2,null=True)
 
@@ -29,8 +29,8 @@ class Product(models.Model):
 	pair_with = models.ManyToManyField("self",blank=True)
 
 	
-	name = models.CharField(max_length=250, unique=True,null=True)
-	slug = models.SlugField(max_length=250, unique=True,null=True) 
+	name = models.CharField(max_length=50, unique=True,null=True)
+	slug = models.SlugField(max_length=50, unique=True,null=True) 
 	description = models.TextField(blank=True,null=True)
 	#product_id = models.AutoField(primary_key=True)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)

@@ -18,7 +18,7 @@ class Profile(models.Model):
 class Wishlist(models.Model):
     wish_id= models.AutoField(primary_key=True,default='')
     user=models.ForeignKey(User,on_delete=models.CASCADE)
-    wish_prod=models.CharField(max_length=250, unique=True,default='ads123')
+    wish_prod=models.CharField(max_length=50, unique=True,default='ads123')
     
     
 
