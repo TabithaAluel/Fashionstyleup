@@ -139,4 +139,12 @@ form{
   html {
 	overflow-x: hidden;
   }
-  
+  .big{
+	position: relative;
+	transition: ease-in-out  0.5s;
+	transform: scale(1.1);
+}
+
+.big:hover{
+	transform: scale(1.2);
+}

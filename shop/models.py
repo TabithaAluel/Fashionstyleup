@@ -3,6 +3,8 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.db.models import Avg, Count
 from django.forms import ModelForm
+from django.db.models.fields import URLField
+
 
 class Category(models.Model):
 	name = models.CharField(max_length=50,unique=True,null=True)
@@ -26,7 +28,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-	pair_with = models.ManyToManyField("self",blank=True)
+	pair_with = models.ManyToManyField(User, related_name='pair_with'	, blank=True)
 
 	
 	name = models.CharField(max_length=50, unique=True,null=True)
@@ -62,3 +64,5 @@ class Product(models.Model):
 	
 	def __str__(self):
 		return '{}'.format(self.name)
+
+

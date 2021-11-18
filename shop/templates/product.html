@@ -118,22 +118,44 @@
 			 
 			<div class="card-body">
 			    <h4>{{rel_product.name}}</h4>
-			    <p><h2><span class="badge rounded-pill bg-info">{{product.price}}</span> <span class="badge rounded-pill bg-light text-dark"><del>{{product.cut_through_price}}</del></span></h2></p>
+			    <!-- <p><h2><span class="badge rounded-pill bg-info">{{product.price}}</span> <span class="badge rounded-pill bg-light text-dark"><del>{{product.cut_through_price}}</del></span></h2></p> -->
 			    {% if product.stock <= 0 %}
 				<p class="text-justify my_prod_text"><b>Out of Stock</b></p>
 			    {% else %}
-				
 				    <p><a class="btn btn-success btn-lg" href="{% url 'cart:add_cart' rel_product.id %}"><i class="fas fa-shopping-cart"></i>Add to Cart</a></p>
-			    
+
+
+
 			    {% endif %}
 			</div>
+			
+
+
+
 			</div>
+
+
+			
 		</div>
 		{% endfor %}
 
 		</div>
 		
 	</div>
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
 
 {% include 'footer.html' %}
 {% endblock %}

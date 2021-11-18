@@ -35,7 +35,8 @@ def ProdCatDetail(request, c_slug, product_slug):
     
     try:
         product = Product.objects.get(category__slug=c_slug, slug=product_slug)
-        pair_with = product.pair_with.all()
+        # import pdb; pdb.set_trace()
+        pair_with=Product.pair_with.through.objects.all()
 
         print(c_slug,product_slug)
         ctg= Category.objects.get(name=product.category)
@@ -47,15 +48,9 @@ def ProdCatDetail(request, c_slug, product_slug):
             'ctg':ctg,
             'product':product,
             'related_products':related_products,
-            "pair_with":pair_with,
+            # "pair_with":pair_with,
         }
-        print(product.pair_with, "is the product")
-
-
-
-
-
-
+        # print(product.pair_with, "is the product")
 
     except Exception as e:
         raise e
@@ -75,3 +70,4 @@ def wish_prod(request,product_slug):
     except Exception as e:
         raise e
     return render(request, 'sample.html', context)
+
